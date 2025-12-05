@@ -1,0 +1,269 @@
+{
+  "datasets": [
+    {
+      "name": "fc8f1879",
+      "displayName": "dim_assessment",
+      "queryLines": [
+        "SELECT * FROM analytics_oulad.gold_star.dim_assessment"
+      ]
+    },
+    {
+      "name": "b4d71d29",
+      "displayName": "dim_course",
+      "queryLines": [
+        "SELECT * FROM analytics_oulad.gold_star.dim_course"
+      ]
+    },
+    {
+      "name": "aa7532a5",
+      "displayName": "dim_student",
+      "queryLines": [
+        "SELECT * FROM analytics_oulad.gold_star.dim_student"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "41c6ac6f",
+      "displayName": "Executive Summary",
+      "layout": [
+        {
+          "widget": {
+            "name": "9caa6f19",
+            "queries": [
+              {
+                "name": "dashboards/01f0d226ae7813f0a2fb5cdbd2b5fa56/datasets/01f0d226c43a1db6b8ae3cc315a8ad66_student_id",
+                "query": {
+                  "datasetName": "aa7532a5",
+                  "fields": [
+                    {
+                      "name": "student_id",
+                      "expression": "`student_id`"
+                    },
+                    {
+                      "name": "student_id_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "student_id",
+                    "queryName": "dashboards/01f0d226ae7813f0a2fb5cdbd2b5fa56/datasets/01f0d226c43a1db6b8ae3cc315a8ad66_student_id"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Student ID"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 2,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "8c135b09",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "aa7532a5",
+                  "fields": [
+                    {
+                      "name": "countdistinct(student_id)",
+                      "expression": "COUNT(DISTINCT `student_id`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "countdistinct(student_id)"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Number of Students"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 1,
+            "width": 1,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "1960b5c7",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "b4d71d29",
+                  "fields": [
+                    {
+                      "name": "count(code_module)",
+                      "expression": "COUNT(`code_module`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "count(code_module)"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 1,
+            "y": 1,
+            "width": 1,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "841dbafe",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "aa7532a5",
+                  "fields": [
+                    {
+                      "name": "count(student_id)",
+                      "expression": "COUNT(`student_id`)"
+                    },
+                    {
+                      "name": "student_id",
+                      "expression": "`student_id`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "count(student_id)",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                },
+                "y": {
+                  "fieldName": "student_id",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 2,
+            "y": 3,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "2dce1322",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "b4d71d29",
+                  "fields": [
+                    {
+                      "name": "count(code_presentation)",
+                      "expression": "COUNT(`code_presentation`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "count(code_presentation)"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 2,
+            "y": 1,
+            "width": 1,
+            "height": 2
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "33bdc3ba",
+      "displayName": "Global Filters",
+      "layout": [
+        {
+          "widget": {
+            "name": "5ae6b3d2",
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-single-select",
+              "encodings": {},
+              "frame": {
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_GLOBAL_FILTERS"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "widgetHeaderAlignment": "ALIGNMENT_UNSPECIFIED"
+    },
+    "applyModeEnabled": false
+  }
+}

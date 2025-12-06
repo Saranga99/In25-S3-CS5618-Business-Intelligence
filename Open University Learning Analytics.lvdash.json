@@ -34,6 +34,13 @@
       "queryLines": [
         "SELECT * FROM analytics_oulad.gold_star.fact_assessment_score"
       ]
+    },
+    {
+      "name": "776baf5e",
+      "displayName": "student_course_analytics",
+      "queryLines": [
+        "SELECT * FROM analytics_oulad.gold_star.student_course_analytics"
+      ]
     }
   ],
   "pages": [
@@ -61,6 +68,23 @@
                   ],
                   "disaggregated": false
                 }
+              },
+              {
+                "name": "dashboards/01f0d226ae7813f0a2fb5cdbd2b5fa56/datasets/01f0d28d92671f6e8e4eda4511c68c93_student_id",
+                "query": {
+                  "datasetName": "776baf5e",
+                  "fields": [
+                    {
+                      "name": "student_id",
+                      "expression": "`student_id`"
+                    },
+                    {
+                      "name": "student_id_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
               }
             ],
             "spec": {
@@ -71,6 +95,10 @@
                   {
                     "fieldName": "student_id",
                     "queryName": "dashboards/01f0d226ae7813f0a2fb5cdbd2b5fa56/datasets/01f0d226c43a1db6b8ae3cc315a8ad66_student_id"
+                  },
+                  {
+                    "fieldName": "student_id",
+                    "queryName": "dashboards/01f0d226ae7813f0a2fb5cdbd2b5fa56/datasets/01f0d28d92671f6e8e4eda4511c68c93_student_id"
                   }
                 ]
               },
@@ -94,7 +122,7 @@
               {
                 "name": "main_query",
                 "query": {
-                  "datasetName": "aa7532a5",
+                  "datasetName": "776baf5e",
                   "fields": [
                     {
                       "name": "countdistinct(student_id)",
@@ -133,7 +161,7 @@
               {
                 "name": "main_query",
                 "query": {
-                  "datasetName": "b4d71d29",
+                  "datasetName": "776baf5e",
                   "fields": [
                     {
                       "name": "countdistinct(code_module)",
@@ -163,60 +191,12 @@
         },
         {
           "widget": {
-            "name": "841dbafe",
-            "queries": [
-              {
-                "name": "main_query",
-                "query": {
-                  "datasetName": "aa7532a5",
-                  "fields": [
-                    {
-                      "name": "count(student_id)",
-                      "expression": "COUNT(`student_id`)"
-                    },
-                    {
-                      "name": "student_id",
-                      "expression": "`student_id`"
-                    }
-                  ],
-                  "disaggregated": false
-                }
-              }
-            ],
-            "spec": {
-              "version": 3,
-              "widgetType": "bar",
-              "encodings": {
-                "x": {
-                  "fieldName": "count(student_id)",
-                  "scale": {
-                    "type": "quantitative"
-                  }
-                },
-                "y": {
-                  "fieldName": "student_id",
-                  "scale": {
-                    "type": "categorical"
-                  }
-                }
-              }
-            }
-          },
-          "position": {
-            "x": 0,
-            "y": 3,
-            "width": 3,
-            "height": 6
-          }
-        },
-        {
-          "widget": {
             "name": "2dce1322",
             "queries": [
               {
                 "name": "main_query",
                 "query": {
-                  "datasetName": "b4d71d29",
+                  "datasetName": "776baf5e",
                   "fields": [
                     {
                       "name": "countdistinct(code_presentation)",
@@ -264,6 +244,23 @@
                   ],
                   "disaggregated": false
                 }
+              },
+              {
+                "name": "dashboards/01f0d226ae7813f0a2fb5cdbd2b5fa56/datasets/01f0d28d92671f6e8e4eda4511c68c93_code_module",
+                "query": {
+                  "datasetName": "776baf5e",
+                  "fields": [
+                    {
+                      "name": "code_module",
+                      "expression": "`code_module`"
+                    },
+                    {
+                      "name": "code_module_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
               }
             ],
             "spec": {
@@ -274,6 +271,10 @@
                   {
                     "fieldName": "code_module",
                     "queryName": "dashboards/01f0d226ae7813f0a2fb5cdbd2b5fa56/datasets/01f0d226c3be15e48ac614a64e7b284a_code_module"
+                  },
+                  {
+                    "fieldName": "code_module",
+                    "queryName": "dashboards/01f0d226ae7813f0a2fb5cdbd2b5fa56/datasets/01f0d28d92671f6e8e4eda4511c68c93_code_module"
                   }
                 ]
               },
@@ -310,6 +311,23 @@
                   ],
                   "disaggregated": false
                 }
+              },
+              {
+                "name": "dashboards/01f0d226ae7813f0a2fb5cdbd2b5fa56/datasets/01f0d28d92671f6e8e4eda4511c68c93_code_presentation",
+                "query": {
+                  "datasetName": "776baf5e",
+                  "fields": [
+                    {
+                      "name": "code_presentation",
+                      "expression": "`code_presentation`"
+                    },
+                    {
+                      "name": "code_presentation_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
               }
             ],
             "spec": {
@@ -320,6 +338,10 @@
                   {
                     "fieldName": "code_presentation",
                     "queryName": "dashboards/01f0d226ae7813f0a2fb5cdbd2b5fa56/datasets/01f0d226c3be15e48ac614a64e7b284a_code_presentation"
+                  },
+                  {
+                    "fieldName": "code_presentation",
+                    "queryName": "dashboards/01f0d226ae7813f0a2fb5cdbd2b5fa56/datasets/01f0d28d92671f6e8e4eda4511c68c93_code_presentation"
                   }
                 ]
               },
@@ -341,17 +363,17 @@
             "name": "c4a42032",
             "queries": [
               {
-                "name": "dashboards/01f0d226ae7813f0a2fb5cdbd2b5fa56/datasets/01f0d22f9d751e5e9c6493c79cbfa69b_score",
+                "name": "dashboards/01f0d226ae7813f0a2fb5cdbd2b5fa56/datasets/01f0d28d92671f6e8e4eda4511c68c93_avg_score",
                 "query": {
-                  "datasetName": "f0bc6357",
+                  "datasetName": "776baf5e",
                   "fields": [
                     {
-                      "name": "min(score)",
-                      "expression": "MIN(`score`)"
+                      "name": "min(avg_score)",
+                      "expression": "MIN(`avg_score`)"
                     },
                     {
-                      "name": "max(score)",
-                      "expression": "MAX(`score`)"
+                      "name": "max(avg_score)",
+                      "expression": "MAX(`avg_score`)"
                     }
                   ],
                   "disaggregated": false
@@ -364,8 +386,8 @@
               "encodings": {
                 "fields": [
                   {
-                    "fieldName": "score",
-                    "queryName": "dashboards/01f0d226ae7813f0a2fb5cdbd2b5fa56/datasets/01f0d22f9d751e5e9c6493c79cbfa69b_score"
+                    "fieldName": "avg_score",
+                    "queryName": "dashboards/01f0d226ae7813f0a2fb5cdbd2b5fa56/datasets/01f0d28d92671f6e8e4eda4511c68c93_avg_score"
                   }
                 ]
               },
@@ -380,6 +402,675 @@
             "y": 0,
             "width": 2,
             "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "90ce770a",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "776baf5e",
+                  "fields": [
+                    {
+                      "name": "student_id",
+                      "expression": "`student_id`"
+                    },
+                    {
+                      "name": "code_module",
+                      "expression": "`code_module`"
+                    },
+                    {
+                      "name": "code_presentation",
+                      "expression": "`code_presentation`"
+                    },
+                    {
+                      "name": "gender",
+                      "expression": "`gender`"
+                    },
+                    {
+                      "name": "region",
+                      "expression": "`region`"
+                    },
+                    {
+                      "name": "highest_education",
+                      "expression": "`highest_education`"
+                    },
+                    {
+                      "name": "imd_band",
+                      "expression": "`imd_band`"
+                    },
+                    {
+                      "name": "disability",
+                      "expression": "`disability`"
+                    },
+                    {
+                      "name": "avg_score",
+                      "expression": "`avg_score`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 1,
+              "widgetType": "table",
+              "encodings": {
+                "columns": [
+                  {
+                    "fieldName": "student_id",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 100000,
+                    "title": "student_id",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false
+                  },
+                  {
+                    "fieldName": "code_module",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "order": 100001,
+                    "title": "code_module",
+                    "allowSearch": false,
+                    "alignContent": "left",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false
+                  },
+                  {
+                    "fieldName": "code_presentation",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "order": 100002,
+                    "title": "code_presentation",
+                    "allowSearch": false,
+                    "alignContent": "left",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false
+                  },
+                  {
+                    "fieldName": "gender",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "order": 100003,
+                    "title": "gender",
+                    "allowSearch": false,
+                    "alignContent": "left",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false
+                  },
+                  {
+                    "fieldName": "region",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "order": 100004,
+                    "title": "region",
+                    "allowSearch": false,
+                    "alignContent": "left",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false
+                  },
+                  {
+                    "fieldName": "highest_education",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "order": 100005,
+                    "title": "highest_education",
+                    "allowSearch": false,
+                    "alignContent": "left",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false
+                  },
+                  {
+                    "fieldName": "imd_band",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "order": 100006,
+                    "title": "imd_band",
+                    "allowSearch": false,
+                    "alignContent": "left",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false
+                  },
+                  {
+                    "fieldName": "disability",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "order": 100007,
+                    "title": "disability",
+                    "allowSearch": false,
+                    "alignContent": "left",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false
+                  },
+                  {
+                    "fieldName": "avg_score",
+                    "numberFormat": "0.00",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "float",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 100010,
+                    "title": "avg_score",
+                    "allowSearch": false,
+                    "alignContent": "right",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false
+                  }
+                ]
+              },
+              "invisibleColumns": [
+                {
+                  "numberFormat": "0",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "presentation_length",
+                  "type": "integer",
+                  "displayAs": "number",
+                  "order": 100008,
+                  "title": "presentation_length",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "num_assessments_submitted",
+                  "type": "integer",
+                  "displayAs": "number",
+                  "order": 100009,
+                  "title": "num_assessments_submitted",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0.00",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "max_score",
+                  "type": "float",
+                  "displayAs": "number",
+                  "order": 100011,
+                  "title": "max_score",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0.00",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "min_score",
+                  "type": "float",
+                  "displayAs": "number",
+                  "order": 100012,
+                  "title": "min_score",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0.00",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "weighted_avg_score",
+                  "type": "float",
+                  "displayAs": "number",
+                  "order": 100013,
+                  "title": "weighted_avg_score",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "passed_any_assessment",
+                  "type": "integer",
+                  "displayAs": "number",
+                  "order": 100014,
+                  "title": "passed_any_assessment",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "total_clicks",
+                  "type": "integer",
+                  "displayAs": "number",
+                  "order": 100015,
+                  "title": "total_clicks",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "active_days",
+                  "type": "integer",
+                  "displayAs": "number",
+                  "order": 100016,
+                  "title": "active_days",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0.00",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "avg_clicks_per_row",
+                  "type": "float",
+                  "displayAs": "number",
+                  "order": 100017,
+                  "title": "avg_clicks_per_row",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0.00",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "avg_clicks_per_active_day",
+                  "type": "float",
+                  "displayAs": "number",
+                  "order": 100018,
+                  "title": "avg_clicks_per_active_day",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "risk_performance_based",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100019,
+                  "title": "risk_performance_based",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "risk_low_engagement_percentile",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100020,
+                  "title": "risk_low_engagement_percentile",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "risk_composite_score",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100021,
+                  "title": "risk_composite_score",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "risk_rule_based",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100022,
+                  "title": "risk_rule_based",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                }
+              ],
+              "allowHTMLByDefault": false,
+              "itemsPerPage": 25,
+              "paginationSize": "default",
+              "condensed": true,
+              "withRowNumber": false
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 3,
+            "width": 6,
+            "height": 6
           }
         }
       ],

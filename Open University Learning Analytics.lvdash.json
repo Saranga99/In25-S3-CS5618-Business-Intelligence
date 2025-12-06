@@ -20,6 +20,20 @@
       "queryLines": [
         "SELECT * FROM analytics_oulad.gold_star.dim_student"
       ]
+    },
+    {
+      "name": "11e32079",
+      "displayName": "fact_vle_interactions",
+      "queryLines": [
+        "SELECT * FROM analytics_oulad.gold_star.fact_vle_interactions"
+      ]
+    },
+    {
+      "name": "f0bc6357",
+      "displayName": "fact_assessment_score",
+      "queryLines": [
+        "SELECT * FROM analytics_oulad.gold_star.fact_assessment_score"
+      ]
     }
   ],
   "pages": [
@@ -69,7 +83,7 @@
           "position": {
             "x": 0,
             "y": 0,
-            "width": 2,
+            "width": 1,
             "height": 1
           }
         },
@@ -122,8 +136,8 @@
                   "datasetName": "b4d71d29",
                   "fields": [
                     {
-                      "name": "count(code_module)",
-                      "expression": "COUNT(`code_module`)"
+                      "name": "countdistinct(code_module)",
+                      "expression": "COUNT(DISTINCT `code_module`)"
                     }
                   ],
                   "disaggregated": false
@@ -135,7 +149,7 @@
               "widgetType": "counter",
               "encodings": {
                 "value": {
-                  "fieldName": "count(code_module)"
+                  "fieldName": "countdistinct(code_module)"
                 }
               }
             }
@@ -189,7 +203,7 @@
             }
           },
           "position": {
-            "x": 2,
+            "x": 0,
             "y": 3,
             "width": 3,
             "height": 6
@@ -205,8 +219,8 @@
                   "datasetName": "b4d71d29",
                   "fields": [
                     {
-                      "name": "count(code_presentation)",
-                      "expression": "COUNT(`code_presentation`)"
+                      "name": "countdistinct(code_presentation)",
+                      "expression": "COUNT(DISTINCT `code_presentation`)"
                     }
                   ],
                   "disaggregated": false
@@ -218,7 +232,7 @@
               "widgetType": "counter",
               "encodings": {
                 "value": {
-                  "fieldName": "count(code_presentation)"
+                  "fieldName": "countdistinct(code_presentation)"
                 }
               }
             }
@@ -228,6 +242,144 @@
             "y": 1,
             "width": 1,
             "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "43e96b09",
+            "queries": [
+              {
+                "name": "dashboards/01f0d226ae7813f0a2fb5cdbd2b5fa56/datasets/01f0d226c3be15e48ac614a64e7b284a_code_module",
+                "query": {
+                  "datasetName": "b4d71d29",
+                  "fields": [
+                    {
+                      "name": "code_module",
+                      "expression": "`code_module`"
+                    },
+                    {
+                      "name": "code_module_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "code_module",
+                    "queryName": "dashboards/01f0d226ae7813f0a2fb5cdbd2b5fa56/datasets/01f0d226c3be15e48ac614a64e7b284a_code_module"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Module ID"
+              }
+            }
+          },
+          "position": {
+            "x": 1,
+            "y": 0,
+            "width": 1,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "8d77604f",
+            "queries": [
+              {
+                "name": "dashboards/01f0d226ae7813f0a2fb5cdbd2b5fa56/datasets/01f0d226c3be15e48ac614a64e7b284a_code_presentation",
+                "query": {
+                  "datasetName": "b4d71d29",
+                  "fields": [
+                    {
+                      "name": "code_presentation",
+                      "expression": "`code_presentation`"
+                    },
+                    {
+                      "name": "code_presentation_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "code_presentation",
+                    "queryName": "dashboards/01f0d226ae7813f0a2fb5cdbd2b5fa56/datasets/01f0d226c3be15e48ac614a64e7b284a_code_presentation"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Presentation ID"
+              }
+            }
+          },
+          "position": {
+            "x": 2,
+            "y": 0,
+            "width": 2,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "c4a42032",
+            "queries": [
+              {
+                "name": "dashboards/01f0d226ae7813f0a2fb5cdbd2b5fa56/datasets/01f0d22f9d751e5e9c6493c79cbfa69b_score",
+                "query": {
+                  "datasetName": "f0bc6357",
+                  "fields": [
+                    {
+                      "name": "min(score)",
+                      "expression": "MIN(`score`)"
+                    },
+                    {
+                      "name": "max(score)",
+                      "expression": "MAX(`score`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "range-slider",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "score",
+                    "queryName": "dashboards/01f0d226ae7813f0a2fb5cdbd2b5fa56/datasets/01f0d22f9d751e5e9c6493c79cbfa69b_score"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Score"
+              }
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 0,
+            "width": 2,
+            "height": 1
           }
         }
       ],
